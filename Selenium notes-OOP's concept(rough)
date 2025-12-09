@@ -1,0 +1,158 @@
+
+implicit wait: Wait for a set amount of time for all elements.
+
+driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+
+Explicit wait: Wait for a specific condition to be met.
+
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+
+FluentWait :FluentWait is an advanced version of WebDriverWait, allowing custom polling intervals and ignoring specific exceptions.
+
+Wait<WebDriver> wait = new FluentWait<>(driver)
+												.withTimeout(Duration.ofSeconds(30))                       
+												.pollingEvery(Duration.ofSeconds(5))                      
+												.ignoring(NoSuchElementException.class); 
+
+-----------------------------------------------------------------
+Page object model(POM):
+- page object model will help to create object repositries for web elements
+- each page has separate class with web elements
+- improves reusability and maintanence
+
+
+pom.xml manages dependencies, build lifecycle, and plugins required for the project.
+
+
+use of TestNg:
+-Annotation support
+-organizing test cases
+-grouping and proiaritizing
+-parallel test cases execution
+-@BeforeMethod and @AfterMethod
+
+
+Alrets:
+Alert alert = driver.switchTo().alert();
+alert.accept(); // or alert.dismiss()
+
+ArrayList: stores elements in order and allows duplicates.
+
+HashMap: stores key-value pairs and does not allow duplicate keys.
+
+
+
+throw: is used to explicitly throw an exception.
+
+throws: is used in method signature to declare exceptions.
+
+
+
+Static methods: belong to the class and can be accessed without creating an object.
+
+Non-static methods: belong to instances and require an object to be accessed.
+
+OOPS: Object oriented programming language:
+
+Object-oriented programming (OOPs) is a methodology that simplifies software development and maintenace by 
+providing some rules.
+
+1. Inheritance    -acquiring the properties of super class to sub class is called as Inheritance(achivied by "extends" keyword)
+2. polymorphism   - One entity showing different behaviour is called as polymorphism
+3. encapsulation  - The process of wrapping the data members(Global variables) and memberfunction(methods) into a single unit(class) is called as Encapsulation.
+4. Abstraction    - process of hiding the internal implementation and showing the necessary data to the end user
+
+
+1. Inheritance  ------------ 
+It is the First Pillar of OOPS.
+Inherit means acquire, posses, access, take, etc.
+One class acquiring the properties of another class is called as
+ Inheritance.
+ extends keyword 
+extends is a keyword which indicates that we are creating a new
+ class from an existing class
+
+Types Of Inheritance:
+1.Single Level- one sub class and one super class
+2.Multi Level - multiple sub classes and multiple super classes
+3.Hierarchical
+4.Multiple - multiple super classes & one sub class (not possible)
+5.Hybrid-
+
+METHOD OVERLOADING:
+THE PROCESS OF DEVELOPING MULTIPLE METHODS WITH SAME NAME BUT DIFFERENT ARGUMENTS LIST IS CALLED AS METHOD OVERLOADING.
+ - Number or type of arguments must be different.
+ Ex:  testing()
+ testing(String name)
+ testing(String name,int orderid)
+ 
+ Method Overriding:
+Overriding is all about giving a specific implementation to the inherited method of parent class
+//Ex-1 
+class Parents   
+{ 
+  public void car()//Overridden method 
+  { 
+    System.out.println("Blue color"); 
+  } 
+} 
+class Son extends Parents 
+{ 
+  public void car()//Overriding method 
+  { 
+    System.out.println("Black color"); 
+  } 
+
+2.Polymorphism  ------------ 
+• it is a greek word. 
+• poly means many and morphism means forms. 
+One thing showing multiple behaviour is called as polymorphism. 
+(or) 
+One entity showing different behaviour is called as polymorphism.
+  - A.Compile time polymorphism :
+During compile time one thing showing multiple behaviour is called as 
+compile time polymorphism.
+  -B.Run time polymorphism :
+During Run/Execution time one thing showing multiple behaviour is called 
+as Run time polymorphism. 
+
+3.Encapsulation  ------------ 
+• The process of wrapping the data members(Global variables) and member
+ function(methods) into a single unit(class) is called as
+ Encapsulation.
+ • The main purpose of encapsulation is to achieve security of data
+ 
+ Object Casting
+• Converting one type of object into another type of object is called 
+as Object Casting. 
+They are of 2 types :- 
+A.Upcastng 
+B.Downcasting 
+
+ Upcasting : 
+• Converting sub class object type into super class object type is 
+called as upcasting. 
+During up-casting only super class behaviour is visible, sub class 
+behavior is hidden
+ex:upcasted object 
+   Student s1 = new Admin(); 
+   
+ Downcasting :
+• Converting a super class object type into sub class object type is
+ called as downcasting.
+ (or) 
+• Converting an upcasted object into normal form is called as
+ downcasting.
+ • During downcasting both sub class and super class behaviour is
+ visible.
+ex:downcasted object 
+  Admin a1 = (Admin) s1; //Admin a1 = new Admin()  
+  
+4.Abstraction ( Abstract + ion ) ------------ 
+• It is the second pillar of OOPS concept. 
+• The process of hiding the internal implementation and showing the 
+necessary data to the end user is called as Abstraction. 
+• In other words, we can say that we are not going to show method 
+implementation, we will just provide method header and method 
+signature

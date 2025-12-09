@@ -1,0 +1,58 @@
+
+youtube questions:
+
+1.write a code to find larger number? (without if condition)---------
+
+import java.util.Scanner;
+
+public class LargerNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        int larger = Math.max(num1, num2);
+
+        System.out.println("The larger number is: " + larger);
+
+        scanner.close();
+    }
+}
+
+2. write a string and find hw many lower and higher characters are there?----
+
+import java.util.Scanner;
+
+public class CharacterCount {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        int lowerCount = 0;
+        int upperCount = 0;
+
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+
+            if (Character.isLowerCase(ch)) {
+                lowerCount++;
+            } else if (Character.isUpperCase(ch)) {
+                upperCount++;
+            }
+        }
+
+        System.out.println("Number of lowercase letters: " + lowerCount);
+        System.out.println("Number of uppercase letters: " + upperCount);
+
+        scanner.close();
+    }
+}
+
+
+
